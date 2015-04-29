@@ -20,6 +20,14 @@
     <arg name="base" value="$(arg base)" />
   </include>
 
+  <include file="$(find turtlebot_bringup)/launch/includes/mobile_base.launch.xml">
+    <arg name="base" value="$(arg base)" />
+  </include>
+
+  <!-- jsk_tilt_laser -->
+  <include file="$(find jsk_turtlebot)/launch/tilt_laser_startup.launch">
+    <arg name="RUN_DRIVER" value="true" />
+  </include>
   <!-- no battery -->
   <!-- <include file="$(find turtlebot_bringup)/launch/includes/netbook.launch.xml"> -->
   <!--   <arg name="battery" value="$(arg battery)" /> -->
