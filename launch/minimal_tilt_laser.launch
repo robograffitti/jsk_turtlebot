@@ -23,6 +23,7 @@
   <!-- no change neeeded -->
   <include file="$(find turtlebot_bringup)/launch/includes/mobile_base.launch.xml">
     <arg name="base" value="$(arg base)" />
+    <!-- <remap from="odom" to="/mobile_base/odom" /> -->
   </include>
 
   <!-- no battery -->
