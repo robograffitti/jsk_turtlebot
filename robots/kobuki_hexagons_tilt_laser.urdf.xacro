@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+    - Base      : kobuki
+    - Stacks    : hexagons
+    - 3d Sensor : tilt_laser
+-->
+<robot name="turtlebot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find jsk_turtlebot)/urdf/turtlebot_library.urdf.xacro" />
+
+  <kobuki/>
+  <stack_hexagons_tilt_laser parent="base_link"/>
+  <tilt_laser parent="plate_bottom_link"/>
+
+</robot>
