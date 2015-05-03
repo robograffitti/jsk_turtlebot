@@ -7,6 +7,11 @@
 
   <param name="/use_sim_time" value="$(arg simulation)"/>
 
+  <!-- jsk_tilt_laser -->
+  <include file="$(find jsk_tilt_laser)/launch/tilt_laser_startup.launch">
+    <arg name="RUN_DRIVER" value="true" />
+  </include>
+
   <!-- modified -->
   <include file="$(find jsk_turtlebot)/launch/includes/robot.launch.xml">
     <arg name="base" value="$(arg base)" />
@@ -18,16 +23,9 @@
   <!-- no change neeeded -->
   <include file="$(find turtlebot_bringup)/launch/includes/mobile_base.launch.xml">
     <arg name="base" value="$(arg base)" />
+    <!-- <remap from="odom" to="/mobile_base/odom" /> -->
   </include>
 
-  <include file="$(find turtlebot_bringup)/launch/includes/mobile_base.launch.xml">
-    <arg name="base" value="$(arg base)" />
-  </include>
-
-  <!-- jsk_tilt_laser -->
-  <include file="$(find jsk_turtlebot)/launch/tilt_laser_startup.launch">
-    <arg name="RUN_DRIVER" value="true" />
-  </include>
   <!-- no battery -->
   <!-- <include file="$(find turtlebot_bringup)/launch/includes/netbook.launch.xml"> -->
   <!--   <arg name="battery" value="$(arg battery)" /> -->
